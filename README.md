@@ -1,10 +1,22 @@
 # tmux-temp
 
-Enables displaying k8s cluster name in Tmux status-right and status-left. Configurable icon display.
+Enables displaying CPU temperature in Tmux status-right and status-left. Configurable temperature units.
 
 ![](./screenshots/screenshot.png)
 
 ## Installation
+
+Requires lm_sensors package to be installed and configured.
+
+```
+sudo apt-get install lm-sensors 
+
+# After installation type the following in terminal
+sudo sensors-detect
+
+# You may also need to run
+sudo service kmod start
+```
 
 ### Installation with [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) (recommended)
 
