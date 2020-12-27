@@ -6,10 +6,13 @@ Enables displaying CPU temperature in Tmux status-right and status-left. Configu
 
 ## Installation
 
+### Using hardware monitoring chips
+
 Requires lm_sensors package to be installed and configured.
+[info](https://github.com/lm-sensors/lm-sensors/blob/master/README)
 
 ```
-sudo apt-get install lm-sensors 
+sudo apt-get install lm-sensors
 
 # After installation type the following in terminal
 sudo sensors-detect
@@ -17,6 +20,11 @@ sudo sensors-detect
 # You may also need to run
 sudo service kmod start
 ```
+
+### Raspberry Pi Raspbian
+
+This plugin uses `vcgencmd measure_temp` command on RPi Raspbian to get CPU temperature.
+Should be compatible with other RPi distros with `vcgencmd` available.
 
 ### Installation with [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) (recommended)
 
