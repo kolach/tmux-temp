@@ -9,8 +9,11 @@ print_cpu_temp() {
   local temp
   local units=$1
 
+  # try if this is Raspberry Pi
+  if command_exists "vcgencmd"; then
+    temp=$(vcgencmd measure_temp | tr -d -c 0-9.)
   # try with very common lm-sensors package
-  if command_exists "sensors"; then
+  elif command_exists "sensors"; then
     local units=$1
     local temp
     local temp_pkg
@@ -27,9 +30,6 @@ print_cpu_temp() {
     done
     # remove leading and trailing whitespace
     echo "$temp_string" | awk 'BEGIN{OFS=" "}$1=$1{print $0}'
-  # try if this is Raspberry Pi
-  elif command_exists "vcgencmd"; then
-    temp=$(vcgencmd measure_temp | tr -d -c 0-9.)
   else
     echo "no sensors found"
   fi
