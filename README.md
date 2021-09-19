@@ -4,9 +4,9 @@ Enables displaying CPU temperature in Tmux status-right and status-left. Configu
 
 ![](./screenshots/screenshot.png)
 
-## Installation
-
-### Using hardware monitoring chips
+## Requirements
+### On Ubuntu
+Using hardware monitoring chips
 
 Requires lm_sensors package to be installed and configured.
 [info](https://github.com/lm-sensors/lm-sensors/blob/master/README)
@@ -21,11 +21,20 @@ sudo sensors-detect
 sudo service kmod start
 ```
 
-### Raspberry Pi Raspbian
+### On Raspberry Pi Raspbian
 
 This plugin uses `vcgencmd measure_temp` command on RPi Raspbian to get CPU temperature.
 Should be compatible with other RPi distros with `vcgencmd` available.
 
+### On macOS
+
+This plugin uses [lavoiesl/osx-cpu-temp](https://github.com/lavoiesl/osx-cpu-temp).
+
+```console
+$ bash -c "$(curl -fsSL https://raw.githubusercontent.com/narugit/temp-cpu/master/install_requirements.sh)"
+```
+
+## Installation
 ### Installation with [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) (recommended)
 
 Add plugin to the list of TPM plugins in `.tmux.conf`:
