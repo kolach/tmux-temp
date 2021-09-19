@@ -31,7 +31,9 @@ Should be compatible with other RPi distros with `vcgencmd` available.
 This plugin uses [lavoiesl/osx-cpu-temp](https://github.com/lavoiesl/osx-cpu-temp).
 
 ```console
-$ bash -c "$(curl -fsSL https://raw.githubusercontent.com/narugit/temp-cpu/master/install_requirements.sh)"
+$ git clone https://github.com/lavoiesl/osx-cpu-temp /tmp/osx-cpu-temp
+$ (cd /tmp/osx-cpu-temp && make && sudo make install)
+$ rm -rf /tmp/osx-cpu-temp
 ```
 
 ## Installation
