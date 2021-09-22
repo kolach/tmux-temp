@@ -5,7 +5,7 @@ Enables displaying CPU temperature in Tmux status-right and status-left. Configu
 ![](./screenshots/screenshot.png)
 
 ## Requirements
-### On Ubuntu
+### On Linux
 Using hardware monitoring chips
 
 Requires lm_sensors package to be installed and configured.
