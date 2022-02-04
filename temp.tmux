@@ -7,10 +7,12 @@ source "$CURRENT_DIR/scripts/helpers.sh"
 
 temp_interpolation=(
   "\\#{temp_cpu}"
+  "\\#{temp_gpu}"
 )
 
 temp_commands=(
   "#($CURRENT_DIR/scripts/temp_cpu.sh)"
+  "#($CURRENT_DIR/scripts/temp_gpu.sh)"
 )
 
 do_interpolation() {
