@@ -28,12 +28,12 @@ Should be compatible with other RPi distros with `vcgencmd` available.
 
 ### On macOS
 
-This plugin uses [lavoiesl/osx-cpu-temp](https://github.com/lavoiesl/osx-cpu-temp).
+This plugin uses [narugit/smctemp](https://github.com/narugit/smctemp).
 
 ```console
-$ git clone https://github.com/lavoiesl/osx-cpu-temp /tmp/osx-cpu-temp
-$ (cd /tmp/osx-cpu-temp && make && sudo make install)
-$ rm -rf /tmp/osx-cpu-temp
+$ git clone https://github.com/narugit/smctemp
+$ cd smctemp
+$ sudo make install
 ```
 
 ## Installation
