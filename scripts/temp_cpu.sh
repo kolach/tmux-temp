@@ -30,9 +30,8 @@ print_cpu_temp() {
     done
     # remove leading and trailing whitespace
     echo "$temp_string" | awk 'BEGIN{OFS=" "}$1=$1{print $0}'
-  elif command_exists "osx-cpu-temp"; then
-    local temp
-    temp=$(osx-cpu-temp | grep -o "[0-9]*\.[0-9]")
+  elif command_exists "smctemp"; then
+    temp=$(smctemp -c)
   else
     echo "no sensors found"
   fi
